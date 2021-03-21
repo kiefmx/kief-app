@@ -30,7 +30,7 @@ const HomePage = ({
   fetching,
 }) => {
   useEffect(() => {
-    document.title = `Instaclone`;
+    document.title = `kief.mx`;
     fetchFeedPostsStart(token);
     return () => {
       clearPosts();
@@ -52,7 +52,7 @@ const HomePage = ({
       <MobileHeader>
         <NewPostButton />
         <h3 style={{ fontSize: '2.5rem' }} className="heading-logo">
-          Instaclone
+          kief.mx
         </h3>
         <Icon icon="paper-plane-outline" />
       </MobileHeader>

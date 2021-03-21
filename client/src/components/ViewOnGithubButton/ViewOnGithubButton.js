@@ -6,7 +6,7 @@ import Icon from '../Icon/Icon';
 const ViewOnGithubButton = () => (
   <a
     style={{ textDecoration: 'none' }}
-    href="https://github.com/Sandermoen/instaclone"
+    href="https://kief.mx"
     target="_blank"
     rel="noopener noreferrer"
   >

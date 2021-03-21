@@ -49,7 +49,7 @@ const LoginCard = ({
       }
     >
       <Card className="form-card">
-        <h1 className="heading-logo text-center">Instaclone</h1>
+        <h1 className="heading-logo text-center">kief.mx</h1>
         <form
           onSubmit={(event) => handleSubmit(event)}
           className="form-card__form"
@@ -70,8 +70,6 @@ const LoginCard = ({
             Log In
           </Button>
         </form>
-        <Divider>OR</Divider>
-        <GithubLoginButton />
         {error && (
           <p style={{ padding: '1rem 0' }} className="error">
             {error}
@@ -99,8 +97,7 @@ const LoginCard = ({
             </TextButton>
           </Link>
         </section>
-      </Card>
-      <ViewOnGithubButton />
+      </Card>      
     </div>
   );
 };

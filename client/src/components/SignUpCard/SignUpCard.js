@@ -59,42 +59,31 @@ const SignUpCard = ({ signUpStart, error, fetching }) => {
   return (
     <Fragment>
       <Card className="form-card">
-        <h1 className="heading-logo text-center">Instaclone</h1>
+        <h1 className="heading-logo text-center">kief.mx</h1>
         <h2
-          style={{ fontSize: '1.7rem' }}
+          style={{ fontSize: '1.3rem' }}
           className="heading-2 color-grey text-center"
         >
-          Sign up to see photos and videos from your friends.
-        </h2>
-        <GithubLoginButton
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            color: 'white',
-          }}
-          button
-        />
-        <Divider>OR</Divider>
+          Registrate y se parte de este gran universo cannábico 
+        </h2>        
         <form className="form-card__form" onSubmit={formik.handleSubmit}>
           <FormInput
             name="email"
             fieldProps={formik.getFieldProps('email')}
             valid={formik.touched.email && !formik.errors.email}
-            placeholder="Email address"
+            placeholder="Email"
           />
           <FormInput
             name="fullName"
             fieldProps={formik.getFieldProps('fullName')}
             valid={formik.touched.fullName && !formik.errors.fullName}
-            placeholder="Full Name"
+            placeholder="Nombre"
           />
           <FormInput
             name="username"
             fieldProps={formik.getFieldProps('username')}
             valid={formik.touched.username && !formik.errors.username}
-            placeholder="Username"
+            placeholder="Usuario"
           />
           <FormInput
             name="password"
@@ -103,6 +92,8 @@ const SignUpCard = ({ signUpStart, error, fetching }) => {
             valid={formik.touched.password && !formik.errors.password}
             type="password"
           />
+          <Divider>hi</Divider>
+         
           <Button
             loading={fetching}
             disabled={
@@ -119,9 +110,7 @@ const SignUpCard = ({ signUpStart, error, fetching }) => {
             : formik.submitCount > 0 && Object.values(formik.errors)[0]}
         </p>
         <p className="heading-5 color-grey">
-          By signing up, you agree to our Terms . Learn how we collect, use and
-          share your data in our Data Policy and how we use cookies and similar
-          technology in our Cookies Policy .
+          Acepto tener más de 18 años de edad, los Términos y Condiciones, Política de Cookies, así como nuestra Política de Privacidad.
         </p>
       </Card>
       <Card>
@@ -134,16 +123,15 @@ const SignUpCard = ({ signUpStart, error, fetching }) => {
           }}
         >
           <h4 style={{ marginRight: '5px' }} className="heading-4 font-thin">
-            Have an account?
+            Tengo cuenta
           </h4>
           <Link to="/login">
             <TextButton medium blue bold>
-              Log in
+              Ingresar
             </TextButton>
           </Link>
         </section>
-      </Card>
-      <ViewOnGithubButton />
+      </Card>      
     </Fragment>
   );
 };

@@ -9,7 +9,7 @@ import { selectCurrentUser } from '../../redux/user/userSelectors';
 
 import useScrollPositionThrottled from '../../hooks/useScrollPositionThrottled';
 
-import { ReactComponent as LogoCamera } from '../../assets/svg/logo-camera.svg';
+import { ReactComponent as LogoCamera } from '../../assets/svg/kief-black.svg';
 import SearchBox from '../SearchBox/SearchBox';
 import NewPostButton from '../NewPost/NewPostButton/NewPostButton';
 import NotificationButton from '../Notification/NotificationButton/NotificationButton';
@@ -42,7 +42,7 @@ const Header = memo(({ currentUser }) => {
             <LogoCamera />
           </div>
           <div className="header__logo-header">
-            <h3 className="heading-logo">Instaclone</h3>
+            <h3 className="heading-logo">kief.mx</h3>
           </div>
         </Link>
         <SearchBox />
