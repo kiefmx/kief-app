@@ -1,6 +1,6 @@
 <a href="https://kief.mx"><img src="https://kief.mx/wp-content/uploads/2020/11/WEB_02_slider_homepage_separate-LOGO-KIEF-PRINCIPAL.png" title="kief.mx"></a>
 
-# kiefma.app
+# kiefmx.app
 
 > Project for kief.mx with MongoDB, Express, React, and Socket.io
 
