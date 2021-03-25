@@ -1,4 +1,5 @@
 import userTypes from './userTypes';
+import { differenceInYears } from 'date-fns';
 
 import { disconnectSocket } from '../socket/socketActions';
 import { bookmarkPost as bookmark } from '../../services/postService';
@@ -56,13 +57,23 @@ export const githubSignInStart = (code) => async (dispatch) => {
   }
 };
 
-export const signUpStart = (email, fullName, username, password) => async (
+export const signUpStart = (email, fullName, username, password, city, dayOBD, monthOBD, yearOBD) => async (
   dispatch
 ) => {
   try {
-    dispatch({ type: userTypes.SIGN_IN_START });
-    const response = await registerUser(email, fullName, username, password);
-    dispatch(signInStart(null, null, response.token));
+    // calculate age using date-fns function
+    let age = differenceInYears(					
+      new Date(),
+      new Date(yearOBD, monthOBD, dayOBD)
+    );    
+    if(age < 18){
+      dispatch({ type: userTypes.SIGN_UP_FAILURE, payload: "Debes ser mayor de 18 años de edad." });
+    }
+    else{
+      dispatch({ type: userTypes.SIGN_IN_START });
+      const response = await registerUser(email, fullName, username, password, city, dayOBD, monthOBD, yearOBD);
+      dispatch(signInStart(null, null, response.token));
+    }
   } catch (err) {
     dispatch({ type: userTypes.SIGN_UP_FAILURE, payload: err.message });
   }

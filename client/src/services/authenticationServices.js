@@ -48,15 +48,23 @@ export const githubAuthentication = async (code) => {
  * @param {string} fullName A user's full name
  * @param {string} username A user's username
  * @param {string} password A user's password
+ * @param {string} city A user's city
+ * @param {string} dayOBD A user's day of birthday
+ * @param {string} monthOBD A user's month of birthday
+ * @param {string} yearOBD A user's year of birthday
  * @returns {object} The user object
  */
-export const registerUser = async (email, fullName, username, password) => {
+export const registerUser = async (email, fullName, username, password, city, dayOBD, monthOBD, yearOBD) => {
   try {
     const response = await axios.post('/api/auth/register', {
       email,
       fullName,
       username,
       password,
+      city,
+      dayOBD,
+      monthOBD,
+      yearOBD
     });
     return response.data;
   } catch (err) {

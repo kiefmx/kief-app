@@ -61,6 +61,7 @@ const EditProfileForm = ({
       username: currentUser.username,
       bio: currentUser.bio || '',
       website: currentUser.website || '',
+      city: currentUser.city || '',
     },
     validate,
     onSubmit: async (values) => {
@@ -93,6 +94,13 @@ const EditProfileForm = ({
         <FormInput
           name="fullName"
           fieldProps={formik.getFieldProps('fullName')}
+        />
+      </SettingsFormGroup>
+      <SettingsFormGroup>
+        <label className="heading-3 font-bold">{currentUser.city}</label>
+        <FormInput
+          name="city"
+          fieldProps={formik.getFieldProps('city')}
         />
       </SettingsFormGroup>
       <SettingsFormGroup>

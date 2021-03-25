@@ -38,7 +38,7 @@ export const confirmUser = async (authToken, confirmationToken) => {
   } catch (err) {
     throw new Error(err);
   }
-};
+};current
 
 /**
  * Uploads and changes a user's avatar

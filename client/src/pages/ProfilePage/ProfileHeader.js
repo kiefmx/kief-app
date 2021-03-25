@@ -16,7 +16,7 @@ const ProfileHeader = ({
   follow,
   loading,
 }) => {
-  const { avatar, username, bio, website, fullName } = data.user;
+  const { avatar, username, bio, website, fullName, city } = data.user;
   const { following, followers, postCount } = data;
 
   const showUsersModal = (followers, following) => {
@@ -42,6 +42,7 @@ const ProfileHeader = ({
 
   const renderButton = () => {
     if (currentUser) {
+
       if (currentUser.username === username) {
         return (
           <Fragment>
@@ -51,7 +52,17 @@ const ProfileHeader = ({
             <SettingsButton />
           </Fragment>
         );
-      } else if (data.isFollowing) {
+      }else if (data.user.city) {
+        return (
+          <Fragment>
+            <Link to="/settings/edit">
+              <Button inverted>{data.user.city}</Button>
+            </Link>
+            <SettingsButton />
+          </Fragment>
+        );
+      }
+      else if (data.isFollowing) {
         return (
           <Button
             loading={loading}

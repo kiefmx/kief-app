@@ -1,7 +1,8 @@
 import React, { useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-
+import { Link } from 'react-router-dom';
+import { ReactComponent as LogoCamera } from '../../assets/svg/kief-black.svg';
 import { selectCurrentUser, selectToken } from '../../redux/user/userSelectors';
 import {
   selectFeedPosts,
@@ -50,11 +51,17 @@ const HomePage = ({
   return (
     <Fragment>
       <MobileHeader>
+      <Link to="/" className="header__logo">
+          <div className="header__logo-image">
+            <LogoCamera />
+          </div>
+        </Link>
+
         <NewPostButton />
         <h3 style={{ fontSize: '2.5rem' }} className="heading-logo">
           kief.mx
         </h3>
-        <Icon icon="paper-plane-outline" />
+        
       </MobileHeader>
       <main data-test="page-home" className="home-page grid">
         {!fetching && feedPosts.length === 0 ? (

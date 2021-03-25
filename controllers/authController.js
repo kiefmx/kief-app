@@ -120,7 +120,7 @@ module.exports.loginAuthentication = async (req, res, next) => {
 };
 
 module.exports.register = async (req, res, next) => {
-  const { username, fullName, email, password } = req.body;
+  const { username, fullName, email, password, city, dayOBD, monthOBD, yearOBD } = req.body;
   let user = null;
   let confirmationToken = null;
 
@@ -137,7 +137,7 @@ module.exports.register = async (req, res, next) => {
   if (passwordError) return res.status(400).send({ error: passwordError });
 
   try {
-    user = new User({ username, fullName, email, password });
+    user = new User({ username, fullName, email, password, city, dayOBD, monthOBD, yearOBD });
     confirmationToken = new ConfirmationToken({
       user: user._id,
       token: crypto.randomBytes(20).toString('hex'),

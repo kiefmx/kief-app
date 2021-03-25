@@ -1,3 +1,5 @@
+import { da } from "date-fns/locale";
+
 export const validateEmail = (email) => {
   if (
     !email ||
@@ -43,9 +45,46 @@ export const validatePassword = (password) => {
   return false;
 };
 
+export const validateCity = (city) => {  
+  if (!city || city == '') {
+    return 'Enter a valid city.';
+  } 
+  return false;
+};
+
+export const validateDayOBD = (dayOBD) => {    
+  if (!dayOBD || dayOBD == '') {
+    return 'Enter a day.';
+  } 
+  else if(Number(dayOBD) < 1 || Number(dayOBD) > 31){
+    return '1 to 31';
+  }
+  return false;
+};
+
+export const validateMonthOBD = (monthOBD) => {    
+  if (!monthOBD || monthOBD == '') {
+    return 'Enter a month.';
+  }  
+  else if(Number(monthOBD) < 1 || Number(monthOBD) > 12){
+    return '1 to 12';
+  }
+  return false;
+};
+
+export const validateYearOBD = (yearOBD) => {    
+  if (!yearOBD || yearOBD == '') {
+    return 'Enter a year.';
+  } 
+  else if(Number(yearOBD) < 1900 || Number(yearOBD) > 2021){
+    return '1900 to 2021';
+  }
+  return false;
+};
+
 export const validateBio = (bio) => {
-  if (bio.length > 130) {
-    return 'Your bio has to be 120 characters or less.';
+  if (bio.length > 150) {
+    return 'Your bio has to be 150 characters or less.';
   }
   return false;
 };

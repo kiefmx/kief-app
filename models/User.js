@@ -32,6 +32,13 @@ const UserSchema = new Schema({
     type: String,
     minlength: 8,
   },
+  city: {
+    type: String,
+    default: "Ciudad de México, México",
+  },
+  dayOBD: Number,
+  monthOBD: Number,
+  yearOBD: Number,
   avatar: String,
   bio: {
     type: String,
@@ -52,7 +59,7 @@ const UserSchema = new Schema({
   githubId: Number,
   private: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   confirmed: {
     type: Boolean,
