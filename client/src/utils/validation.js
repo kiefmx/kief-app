@@ -82,7 +82,7 @@ export const validateYearOBD = (yearOBD) => {
   return false;
 };
 
-export const validateBio = (bio) => {
+export const validateBio = (bio) => {  
   if (bio.length > 150) {
     return 'Your bio has to be 150 characters or less.';
   }

@@ -549,7 +549,7 @@ module.exports.removeAvatar = async (req, res, next) => {
 
 module.exports.updateProfile = async (req, res, next) => {
   const user = res.locals.user;
-  const { fullName, username, website, bio, email } = req.body;
+  const { fullName, username, website, bio, email, city } = req.body;
   let confirmationToken = undefined;
   let updatedFields = {};
   try {
@@ -594,6 +594,11 @@ module.exports.updateProfile = async (req, res, next) => {
       if (bioError) return res.status(400).send({ error: bioError });
       userDocument.bio = bio;
       updatedFields.bio = bio;
+    }
+
+    if (city) {
+      userDocument.city = city;
+      updatedFields.city =city;
     }
 
     if (email) {

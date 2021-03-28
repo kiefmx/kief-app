@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { useFormik } from 'formik';
 import { createStructuredSelector } from 'reselect';
@@ -19,6 +19,7 @@ import {
   validateWebsite,
 } from '../../utils/validation';
 
+
 import Avatar from '../Avatar/Avatar';
 import FormInput from '../FormInput/FormInput';
 import FormTextarea from '../FormTextarea/FormTextarea';
@@ -26,6 +27,15 @@ import Button from '../Button/Button';
 import SettingsForm from '../SettingsForm/SettingsForm';
 import SettingsFormGroup from '../SettingsForm/SettingsFormGroup/SettingsFormGroup';
 import ChangeAvatarButton from '../ChangeAvatarButton/ChangeAvatarButton';
+import PerfilCannabico1 from '../KiefInputs/PerfilCannabicoConsumo_1';
+import PerfilCannabico2 from '../KiefInputs/PerfilCannabicoPreferencias_2';
+import PerfilCannabico3 from '../KiefInputs/PerfilCannabicoExperiencia_3';
+
+import Divider from '@material-ui/core/Divider';
+
+const options = [{label: "First", value: 1}, {label: "Second", value: 2}, {label: "Third", value: 3}]
+const [value, setValue] = useState([])
+const [error, setError] = useState("")
 
 const EditProfileForm = ({
   currentUser,
@@ -97,17 +107,10 @@ const EditProfileForm = ({
         />
       </SettingsFormGroup>
       <SettingsFormGroup>
-        <label className="heading-3 font-bold">{currentUser.city}</label>
+        <label className="heading-3 font-bold">City</label>
         <FormInput
           name="city"
           fieldProps={formik.getFieldProps('city')}
-        />
-      </SettingsFormGroup>
-      <SettingsFormGroup>
-        <label className="heading-3 font-bold">Username</label>
-        <FormInput
-          name="username"
-          fieldProps={formik.getFieldProps('username')}
         />
       </SettingsFormGroup>
       <SettingsFormGroup>
@@ -125,22 +128,41 @@ const EditProfileForm = ({
         <label></label>
         <div>
           <h3 className="heading-3 color-grey font-bold">
-            Personal Information
+            Cannabic Profile
           </h3>
           <p
             style={{ fontSize: '1.3rem', lineHeight: '1.6rem' }}
             className="color-grey"
           >
-            Provide your personal information, even if the account is used for a
-            business, a pet or something else. This won't be a part of your
-            public profile.
+            Completa tu Perfil Cannábico y conecta con personas reales según tu compatibilidad.
           </p>
         </div>
       </SettingsFormGroup>
       <SettingsFormGroup>
-        <label className="heading-3 font-bold">Email</label>
-        <FormInput name="email" fieldProps={formik.getFieldProps('email')} />
-      </SettingsFormGroup>
+        <label></label>
+        <PerfilCannabico1 />        
+        <label></label>
+        <Divider />
+      </SettingsFormGroup>    
+      <SettingsFormGroup>
+        <label></label>
+        <PerfilCannabico2 />        
+        <label></label>
+        <Divider />
+      </SettingsFormGroup>    
+      <SettingsFormGroup>
+        <label></label>
+        <PerfilCannabico3 
+          		label="Label"
+              value={value}
+              setValue={setValue}
+              options={options}
+              error={error}
+              setError={setError}
+        />        
+        <label></label>
+        <Divider />
+      </SettingsFormGroup>          
       <SettingsFormGroup>
         <label></label>
         <Button
