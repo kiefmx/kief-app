@@ -27,15 +27,12 @@ import Button from '../Button/Button';
 import SettingsForm from '../SettingsForm/SettingsForm';
 import SettingsFormGroup from '../SettingsForm/SettingsFormGroup/SettingsFormGroup';
 import ChangeAvatarButton from '../ChangeAvatarButton/ChangeAvatarButton';
-import PerfilCannabico1 from '../KiefInputs/PerfilCannabicoConsumo_1';
-import PerfilCannabico2 from '../KiefInputs/PerfilCannabicoPreferencias_2';
-import PerfilCannabico3 from '../KiefInputs/PerfilCannabicoExperiencia_3';
+
+import Qtn1Input from '../KiefInputs/PerfilCannabicoQtn1Input';
+import Qtn2Input from '../KiefInputs/PerfilCannabicoQst2Input';
 
 import Divider from '@material-ui/core/Divider';
 
-const options = [{label: "First", value: 1}, {label: "Second", value: 2}, {label: "Third", value: 3}]
-const [value, setValue] = useState([])
-const [error, setError] = useState("")
 
 const EditProfileForm = ({
   currentUser,
@@ -64,6 +61,9 @@ const EditProfileForm = ({
     return errors;
   };
 
+  const [value, setValue] = useState([])
+	const [error, setError] = useState("")
+	
   const formik = useFormik({
     initialValues: {
       email: currentUser.email,
@@ -128,41 +128,54 @@ const EditProfileForm = ({
         <label></label>
         <div>
           <h3 className="heading-3 color-grey font-bold">
-            Cannabic Profile
+            Perfil Cannábico
           </h3>
           <p
             style={{ fontSize: '1.3rem', lineHeight: '1.6rem' }}
             className="color-grey"
           >
-            Completa tu Perfil Cannábico y conecta con personas reales según tu compatibilidad.
+            Completa tu información y conecta con personas reales según tu compatibilidad.
           </p>
         </div>
-      </SettingsFormGroup>
+      </SettingsFormGroup>      
       <SettingsFormGroup>
-        <label></label>
-        <PerfilCannabico1 />        
-        <label></label>
-        <Divider />
-      </SettingsFormGroup>    
-      <SettingsFormGroup>
-        <label></label>
-        <PerfilCannabico2 />        
-        <label></label>
-        <Divider />
-      </SettingsFormGroup>    
-      <SettingsFormGroup>
-        <label></label>
-        <PerfilCannabico3 
-          		label="Label"
-              value={value}
-              setValue={setValue}
-              options={options}
-              error={error}
-              setError={setError}
+      <label className="heading-3 font-bold">Interés Cannábico</label>
+        <Qtn1Input
+          	label="Selecciona la opción que más te identifica.."
+            value={value}
+            setValue={setValue}            
+            error={error}
+            setError={setError}
         />        
         <label></label>
         <Divider />
-      </SettingsFormGroup>          
+      </SettingsFormGroup>
+     
+      <SettingsFormGroup>
+      <label className="heading-3 font-bold">Consumo</label>
+        <Qtn2Input />        
+        <label></label>
+        <Divider />
+      </SettingsFormGroup>
+
+       {value.length > 0 ? 
+        <SettingsFormGroup>
+        <label className="heading-3 font-bold">Interés Cannábico</label>
+          <Qtn1Input
+              label="Selecciona la opción que más te identifica.."
+              value={value}
+              setValue={setValue}            
+              error={error}
+              setError={setError}
+          />        
+          <label></label>
+          <Divider />
+        </SettingsFormGroup>
+      : null}
+      
+
+      
+            
       <SettingsFormGroup>
         <label></label>
         <Button

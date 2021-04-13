@@ -135,22 +135,23 @@ module.exports.sendConfirmationEmail = async (
   email,
   confirmationToken
 ) => {
+  try {
+    const source = fs.readFileSync(
+      'templates/confirmationEmail.html',
+      'utf8'
+    );
+    template = handlebars.compile(source);
+    const html = template({
+      username: username,
+      confirmationUrl: `${process.env.HOME_URL}/confirm/${confirmationToken}`,
+      url: process.env.HOME_URL,
+    });
+    await this.sendEmail(email, 'Confirm your kief.mx account', html);
+  } catch (err) {
+    console.log(err);
+  }
   if (process.env.NODE_ENV === 'production') {
-    try {
-      const source = fs.readFileSync(
-        'templates/confirmationEmail.html',
-        'utf8'
-      );
-      template = handlebars.compile(source);
-      const html = template({
-        username: username,
-        confirmationUrl: `${process.env.HOME_URL}/confirm/${confirmationToken}`,
-        url: process.env.HOME_URL,
-      });
-      await this.sendEmail(email, 'Confirm your kief.mx account', html);
-    } catch (err) {
-      console.log(err);
-    }
+    
   }
 };
 

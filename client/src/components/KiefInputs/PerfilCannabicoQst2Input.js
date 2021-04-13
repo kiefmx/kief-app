@@ -38,7 +38,7 @@ export default function SwitchListSecondary() {
     
       <List className={classes.root}>
         <ListItem>
-        <label className="heading-3 font-bold">1. ¿Consumes Cannabis?</label>          
+        <p style={{ fontSize: '1.3rem', lineHeight: '1.6rem' }} className="color-grey" > ¿Eres consumidor de Cannabis?</p>
           <ListItemSecondaryAction > 
             <Switch
               edge="end"

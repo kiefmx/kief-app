@@ -9,6 +9,15 @@ import {
   FormHelperText,
 } from "@material-ui/core";
 
+const options = [{label: "Auto exploración", value: 1},
+                  {label: "Cuidado Personal", value: 2}, 
+                  {label: "Comercial", value: 3}, 
+                  {label: "Espiritual", value: 4}, 
+                  {label: "Industrial", value: 5}, 
+                  {label: "Investigación", value: 6}, 
+                  {label: "Medicinal", value: 7}]
+
+
 const useStyles = makeStyles((theme) => ({
   container: {
     margin: ".5rem 0 .5rem",
@@ -28,42 +37,29 @@ const useStyles = makeStyles((theme) => ({
 
 // 1.0.5
 
-const MultipleSelectChips = ({
+const PerfilCannabicoQtn1Input = ({
   value,
   setValue,
-  options,
   label,
   error,
   setError,
 }) => {
   const classes = useStyles();
+  
 
   const handleClick = (clickedValue) => {
     if (setError) {
       setError("");
     }
-    if (value.find((e) => e === clickedValue)) {
-      const index = value.findIndex((e) => e === clickedValue);
-      let arr = [...value];
-      arr.splice(index, 1);
-      setValue(arr);
-    } else {
+    value = [];
       setValue([...value, clickedValue]);
-    }
   };
 
   return (
     <>
       <div className={classes.container}>
         {label && (
-          <FormLabel error={Boolean(error)}>
-            <Typography variant="body2">{`${label}${
-              value.length ? ":" : ""
-            } ${options
-              .filter((option) => value.indexOf(option.value) !== -1)
-              .map((option) => option.label)
-              .join(", ")}`}</Typography>
-          </FormLabel>
+          <p style={{ fontSize: '1.3rem', lineHeight: '1.6rem' }} className="color-grey" > {label}</p>
         )}
         {Boolean(error) && (
           <FormHelperText
@@ -100,20 +96,12 @@ const MultipleSelectChips = ({
   );
 };
 
-MultipleSelectChips.propTypes = {
+PerfilCannabicoQtn1Input.propTypes = {
   label: PropTypes.string,
   value: PropTypes.array.isRequired,
   setValue: PropTypes.func.isRequired,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-        .isRequired,
-      icon: PropTypes.node,
-    })
-  ).isRequired,
   error: PropTypes.string,
   setError: PropTypes.func,
 };
 
-export default MultipleSelectChips;
+export default PerfilCannabicoQtn1Input;
