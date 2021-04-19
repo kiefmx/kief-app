@@ -52,7 +52,7 @@ function FormSearchLocationInput({
 
   useEffect(() => {
     loadScript(
-      `https://maps.googleapis.com/maps/api/js?key=AIzaSyDaHCf9ZGTaQFNitx5q_H-FgE1z5A33tG0&libraries=places`,
+      `https://maps.googleapis.com/maps/api/js?key=AIzaSyCgXIUXztFRE2csZw_jGVgyvap8-Rt-qc0&libraries=places`,
       () => handleScriptLoad(setQuery, autoCompleteRef)
     );
   }, []);
