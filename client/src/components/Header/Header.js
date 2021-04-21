@@ -9,7 +9,7 @@ import { selectCurrentUser } from '../../redux/user/userSelectors';
 
 import useScrollPositionThrottled from '../../hooks/useScrollPositionThrottled';
 
-import { ReactComponent as LogoCamera } from '../../assets/svg/kief-black.svg';
+import { ReactComponent as LogoCamera } from '../../assets/svg/kief-logo-black.svg';
 import SearchBox from '../SearchBox/SearchBox';
 import NewPostButton from '../NewPost/NewPostButton/NewPostButton';
 import NotificationButton from '../Notification/NotificationButton/NotificationButton';

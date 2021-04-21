@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { ReactComponent as LogoKiefmxRegister } from '../../assets/svg/kief-black.svg';
+import { ReactComponent as LogoKiefmxRegister } from '../../assets/svg/kief-logo-black.svg';
 
 import { signUpStart } from '../../redux/user/userActions';
 import { selectError, selectFetching } from '../../redux/user/userSelectors';
@@ -127,18 +127,21 @@ const SignUpCard = ({ signUpStart, error, fetching }) => {
             valid={formik.touched.email && !formik.errors.email}
             placeholder="Email"
           />
+          
           <FormInput
             name="fullName"
             fieldProps={formik.getFieldProps('fullName')}
             valid={formik.touched.fullName && !formik.errors.fullName}
             placeholder="Nombre"
           />
+          
           <FormInput
             name="username"
             fieldProps={formik.getFieldProps('username')}
             valid={formik.touched.username && !formik.errors.username}
             placeholder="Usuario"
           />
+          
           <FormInput
             name="password"
             fieldProps={formik.getFieldProps('password')}
@@ -146,6 +149,7 @@ const SignUpCard = ({ signUpStart, error, fetching }) => {
             valid={formik.touched.password && !formik.errors.password}
             type="password"
           />
+          <p className="error"  >{(formik.touched.password == true && formik.errors.password) ?  formik.errors.password : '' } </p>              
 
           <FormInput
             name="city"
@@ -153,7 +157,7 @@ const SignUpCard = ({ signUpStart, error, fetching }) => {
             placeholder="Ciudad"
             valid={formik.touched.city && !formik.errors.city}
             type="text"
-          />
+          />          
 
           <h2
               style={{ fontSize: '1.3rem' }}
@@ -192,7 +196,6 @@ const SignUpCard = ({ signUpStart, error, fetching }) => {
             />
           </div>
           
-          
           <Button
             loading={fetching}
             disabled={
@@ -209,7 +212,7 @@ const SignUpCard = ({ signUpStart, error, fetching }) => {
             : formik.submitCount > 0 && Object.values(formik.errors)[0]}
         </p>
         <p className="heading-5 color-grey">
-          Acepto tener más de 18 años de edad, los Términos y Condiciones, Política de Cookies, así como nuestra Política de Privacidad.
+          Acepto tener más de 18 años de edad, los <a href="https://kief.mx/terminos" target="_blank">Términos y Condiciones</a>, así como nuestra <a href="https://kief.mx/privacidad" target="_blank">Política de Privacidad</a>.
         </p>
       </Card>
       <Card>
