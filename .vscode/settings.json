@@ -1,4 +1,3 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/943fd1ee-b045-4371-91c5-c7cb863c2e13/resourceGroups/kiefmx-rg/providers/Microsoft.Web/sites/kiefmx-app",
     "appService.deploySubpath": "."
 }
