@@ -49,7 +49,9 @@ const LoginCard = ({
       }
     >
       <Card className="form-card">
-        <h1 className="heading-logo text-center">kief.mx</h1>
+        <img width="120px" src="https://res.cloudinary.com/kiefmx/image/upload/v1618990286/kiefmx-logo.png"></img>
+        
+        
         <form
           onSubmit={(event) => handleSubmit(event)}
           className="form-card__form"

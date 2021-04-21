@@ -31,15 +31,9 @@ const Footer = () => (
     <div className="footer__right">
       <h4
         className="heading-4 color-grey font-bold"
-        style={{ display: 'flex', alignItems: 'center' }}
-      >
-        MADE WITH
-        <Icon
-          className="icon--small color-grey"
-          icon="heart"
-          style={{ display: 'inline-block', margin: '0 5px' }}
-        />{' '}
-        BY SANDER MOEN
+        style={{ display: 'flex', alignItems: 'center' }}>
+        Red Integral Cannábica
+        
       </h4>
     </div>
   </footer>

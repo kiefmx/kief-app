@@ -56,11 +56,12 @@ const HomePage = ({
             <LogoCamera />
           </div>
         </Link>
-
-        <NewPostButton />
-        <h3 style={{ fontSize: '2.5rem' }} className="heading-logo">
-          kief.mx
+        
+        <h3 >          
         </h3>
+        
+        <NewPostButton />
+
         
       </MobileHeader>
       <main data-test="page-home" className="home-page grid">
