@@ -19,7 +19,7 @@ const filters = require('../utils/filters');
 
 module.exports.createPost = async (req, res, next) => {
   const user = res.locals.user;
-  const { caption, postType, filter: filterName } = req.body;
+  const { caption, postType, postTypeLabel, filter: filterName } = req.body;
   let post = undefined;
   const filterObject = filters.find((filter) => filter.name === filterName);
   const hashtags = [];
@@ -28,6 +28,14 @@ module.exports.createPost = async (req, res, next) => {
       hashtags.push(result.value.substring(1));
     }
   });
+
+  if(postType){
+    if(postType.length > 0){
+      hashtags.push( postTypeLabel );
+    }
+  }
+
+
 
   if (!req.file) {
     return res

@@ -8,9 +8,9 @@ import MedicalIcon from '@material-ui/icons/LocalHospital';
 
 export const getPostTypeOptionList = () => {  
   return [ {label: "Info", value: 1, icon: InfoIcon},
-  {label: "Eventos", value: 2, icon: CalendarIcon}, 
+  {label: "Calendario", value: 2, icon: CalendarIcon}, 
   {label: "Flores", value: 3, icon: FlowersoIcon}, 
   {label: "Fun", value: 4, icon: SmileIcon}, 
-  {label: "Consumo Responsable", value: 5, icon: ConsumeIcon},
+  {label: "ConsumoResponsable", value: 5, icon: ConsumeIcon},
   {label: "Medicinal", value: 6, icon: MedicalIcon}];
 };

@@ -35,9 +35,7 @@ const TypePostInput = ({
 }) => {
   
   const classes = useStyles();
-  const icono = postTypes[value - 1].icon;
   
-
   
   return (
     <>

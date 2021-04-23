@@ -35,19 +35,25 @@ const useStyles = makeStyles((theme) => ({
 const PostOptionsInputs = ({
   value,
   setValue,
-  label,
+  postTypeLabelOption,
+  setLabelOption,
   error,
   setError,
 }) => {
   const classes = useStyles();
   
 
-  const handleClick = (clickedValue) => {
+  const handleClick = (clickedValue, clickedValueLabel) => {
     if (setError) {
       setError("");
     }
     value = [];
-      setValue([...value, clickedValue]);
+    setValue([...value, clickedValue]);
+    
+    postTypeLabelOption = '';
+    setLabelOption([...value, clickedValueLabel])
+    
+
   };
 
   return (
@@ -77,7 +83,7 @@ const PostOptionsInputs = ({
                   <Typography variant="body2">{`${option.label}`}</Typography>
                 }
                 clickable
-                onClick={() => handleClick(option.value)}
+                onClick={() => handleClick(option.value, option.label)}
               />
             ))
           : null}

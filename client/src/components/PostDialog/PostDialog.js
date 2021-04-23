@@ -25,6 +25,10 @@ import { INITIAL_STATE, postDialogReducer } from './postDialogReducer';
 import TypePost from '../KiefInputs/TypePostInput';
 import { getPostTypeOptionList } from '../../utils/postTypeOptionList';
 
+const postTypes = getPostTypeOptionList();
+
+
+
 const PostDialog = ({
   postId,
   token,
@@ -44,7 +48,7 @@ const PostDialog = ({
   const history = useHistory();
 
   const fetching = loading !== undefined ? loading : state.fetching;
-  const postTypes = getPostTypeOptionList();
+  
 
   useEffect(() => {
     if (!loading) {
@@ -174,10 +178,17 @@ const PostDialog = ({
                   <b>{state.data.author.username}</b>
                 </p>
               </Link>
+
                 {state.data.postType && (
+                  <Link style={{ textDecoration: 'none' }}
+                  to={`/explore/tags/${postTypes[state.data.postType - 1].label.toLowerCase()}`}
+                >
                   <span className="post-type">
                     <TypePost value={state.data.postType}></TypePost>                    
                   </span>
+                </Link>
+
+                  
                 )}
              </div>
             

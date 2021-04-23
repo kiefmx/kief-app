@@ -34,6 +34,7 @@ const NewPostForm = ({
   const [loading, setLoading] = useState(false);
 
   const [postType, setPostType] = useState([])
+  const [postTypeLabel, setPostTypeLabel] = useState('')
 	const [error, setError] = useState("")
 
   const history = useHistory();
@@ -46,6 +47,7 @@ const NewPostForm = ({
     formData.set('caption', caption);
     formData.set('crop', JSON.stringify(previewImage.crop));
     formData.set('postType', postType);
+    formData.set('postTypeLabel', postTypeLabel);
 
     previewImage.filterName && formData.set('filter', previewImage.filterName);
     try {
@@ -119,7 +121,11 @@ const NewPostForm = ({
 
         <Options
             value={postType}
-            setValue={setPostType}            
+            setValue={setPostType}   
+            
+            postTypeLabel = {postTypeLabel}
+            setLabelOption = {setPostTypeLabel}
+            
             error={error}
             setError={setError}
         /> 
