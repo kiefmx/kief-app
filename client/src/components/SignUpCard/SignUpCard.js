@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { ReactComponent as LogoKiefmxRegister } from '../../assets/svg/kief-logo-black.svg';
+import { ReactComponent as LogoKiefmxRegister } from '../../assets/svg/kief-logo-verde-nolabel.svg';
 
 import { signUpStart } from '../../redux/user/userActions';
 import { selectError, selectFetching } from '../../redux/user/userSelectors';

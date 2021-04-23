@@ -18,6 +18,8 @@ import Icon from '../../Icon/Icon';
 import TextButton from '../../Button/TextButton/TextButton';
 import Loader from '../../Loader/Loader';
 
+import Options from  '../../KiefInputs/PostOptionsInput';
+
 const NewPostForm = ({
   token,
   file,
@@ -31,7 +33,11 @@ const NewPostForm = ({
   const [caption, setCaption] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const [postType, setPostType] = useState([])
+	const [error, setError] = useState("")
+
   const history = useHistory();
+  
 
   const handleClick = async (event) => {
     event.preventDefault();
@@ -39,6 +45,8 @@ const NewPostForm = ({
     formData.append('image', file);
     formData.set('caption', caption);
     formData.set('crop', JSON.stringify(previewImage.crop));
+    formData.set('postType', postType);
+
     previewImage.filterName && formData.set('filter', previewImage.filterName);
     try {
       setLoading(true);
@@ -108,6 +116,15 @@ const NewPostForm = ({
             </div>
           </div>
         </Fragment>
+
+        <Options
+            value={postType}
+            setValue={setPostType}            
+            error={error}
+            setError={setError}
+        /> 
+        
+
       </form>
     </Fragment>
   );

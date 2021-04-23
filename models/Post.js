@@ -6,6 +6,7 @@ const PostSchema = new Schema({
   filter: String,
   thumbnail: String,
   caption: String,
+  postType: String,
   hashtags: [
     {
       type: String,

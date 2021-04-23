@@ -39,20 +39,7 @@
       svg {
         width: 7.0rem;
         height: 5.0rem;
-      }
-
-      &::after {
-        content: '';
-        height: 3rem;
-        transform: translateY(3px);
-        width: 0px;
-        background-color: $color-black;
-        display: inline-block;
-        margin: 0 1.5rem;
-
-        opacity: 1;
-        transition: opacity 200ms;
-      }
+      }      
     }
 
     &-header {

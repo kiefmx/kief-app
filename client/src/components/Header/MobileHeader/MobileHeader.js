@@ -2,8 +2,10 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { selectCurrentUser } from '../../../redux/user/userSelectors';
+import { ReactComponent as LogoKiefmx } from '../../../assets/svg/kief-logo-verde-nolabel.svg';
 
 import Icon from '../../Icon/Icon';
 import Button from '../../Button/Button';
@@ -29,9 +31,15 @@ const MobileHeader = ({ children, backArrow, style, show, currentUser }) => {
         </Fragment>
       ) : (
         <Fragment>
-          <h3 style={{ fontSize: '2.5rem' }} className="heading-logo">
-            kief.mx
-          </h3>
+          <div className="header__logo">
+            <div className="header__logo-image">
+              <LogoKiefmx />
+            </div>
+            <div className="header__logo-header">
+              <h3 className="heading-logo"></h3>
+            </div>
+          </div>
+          
           <div style={{ gridColumn: '-1' }}>
             <Button
               onClick={() => history.push('/')}

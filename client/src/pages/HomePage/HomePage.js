@@ -2,7 +2,7 @@ import React, { useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Link } from 'react-router-dom';
-import { ReactComponent as LogoCamera } from '../../assets/svg/kief-logo-black.svg';
+import { ReactComponent as LogoCamera } from '../../assets/svg/kief-logo-verde-nolabel.svg';
 import { selectCurrentUser, selectToken } from '../../redux/user/userSelectors';
 import {
   selectFeedPosts,

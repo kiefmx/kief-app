@@ -22,6 +22,9 @@ import PostDialogStats from './PostDialogStats/PostDialogStats';
 
 import { INITIAL_STATE, postDialogReducer } from './postDialogReducer';
 
+import TypePost from '../KiefInputs/TypePostInput';
+import { getPostTypeOptionList } from '../../utils/postTypeOptionList';
+
 const PostDialog = ({
   postId,
   token,
@@ -41,6 +44,7 @@ const PostDialog = ({
   const history = useHistory();
 
   const fetching = loading !== undefined ? loading : state.fetching;
+  const postTypes = getPostTypeOptionList();
 
   useEffect(() => {
     if (!loading) {
@@ -161,14 +165,22 @@ const PostDialog = ({
               />
             </div>
           ) : (
-            <Link
-              style={{ textDecoration: 'none' }}
-              to={`/${state.data.author.username}`}
-            >
-              <p className="heading-4 heading-4--bold">
-                <b>{state.data.author.username}</b>
-              </p>
-            </Link>
+            <div>
+              <Link
+                style={{ textDecoration: 'none' }}
+                to={`/${state.data.author.username}`}
+              >
+                <p className="heading-4 heading-4--bold">
+                  <b>{state.data.author.username}</b>
+                </p>
+              </Link>
+                {state.data.postType && (
+                  <span className="post-type">
+                    <TypePost value={state.data.postType}></TypePost>                    
+                  </span>
+                )}
+             </div>
+            
           )}
           {!fetching && (
             <div

@@ -80,6 +80,7 @@ const NotificationButton = ({
           }
           style={{ cursor: 'pointer' }}
         />
+        
         {transitions.map(
           ({ item, key, props }) =>
             item && (

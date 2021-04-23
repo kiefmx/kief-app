@@ -19,7 +19,7 @@ const filters = require('../utils/filters');
 
 module.exports.createPost = async (req, res, next) => {
   const user = res.locals.user;
-  const { caption, filter: filterName } = req.body;
+  const { caption, postType, filter: filterName } = req.body;
   let post = undefined;
   const filterObject = filters.find((filter) => filter.name === filterName);
   const hashtags = [];
@@ -59,6 +59,7 @@ module.exports.createPost = async (req, res, next) => {
       caption,
       author: user._id,
       hashtags,
+      postType, 
     });
     const postVote = new PostVote({
       post: post._id,
