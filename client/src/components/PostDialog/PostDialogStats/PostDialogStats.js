@@ -77,7 +77,7 @@ const PostDialogStats = ({
             }}
             toggledProps={[
               {
-                className: 'icon--button post-dialog__like color-red',
+                className: 'icon--button post-dialog__like color-kiefmx',
                 icon: 'heart',
               },
               {

@@ -141,6 +141,7 @@ const SignUpCard = ({ signUpStart, error, fetching }) => {
             valid={formik.touched.username && !formik.errors.username}
             placeholder="Usuario"
           />
+          <p className="error"  >{(formik.touched.username == true && formik.errors.username) ?  formik.errors.username : '' } </p>    
           
           <FormInput
             name="password"

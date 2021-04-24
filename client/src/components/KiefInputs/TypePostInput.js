@@ -1,6 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import InfoIcon from '@material-ui/icons/Info';
+import CalendarIcon from '@material-ui/icons/CalendarToday';
+import FlowersoIcon from '@material-ui/icons/LocalFlorist';
+import ConsumeIcon from '@material-ui/icons/Whatshot';
+import MedicalIcon from '@material-ui/icons/LocalHospital';
+import SelfCultiveIcon from '@material-ui/icons/Spa';
+
 import {
   makeStyles,
   Chip,
@@ -35,11 +42,15 @@ const TypePostInput = ({
 }) => {
   
   const classes = useStyles();
-  
-  
+
   return (
     <>
-      {postTypes[value - 1].label}
+    {value == "1" && (<InfoIcon />)}
+    {value == "2" && (<CalendarIcon />)}
+    {value == "3" && (<FlowersoIcon />)}
+    {value == "4" && (<ConsumeIcon />)}
+    {value == "5" && (<MedicalIcon />)}
+    {value == "6" && (<SelfCultiveIcon />)}    
     </>
   );
 };

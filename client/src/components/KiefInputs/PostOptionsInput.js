@@ -51,7 +51,7 @@ const PostOptionsInputs = ({
     setValue([...value, clickedValue]);
     
     postTypeLabelOption = '';
-    setLabelOption([...value, clickedValueLabel])
+    setLabelOption([...postTypeLabelOption, clickedValueLabel])
     
 
   };

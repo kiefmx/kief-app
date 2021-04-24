@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 // 1.0.5
 
-const PerfilCannabicoQtn1Input = ({
+const CannabisPreferencesInput = ({
   value,
   setValue,
   label,
@@ -96,7 +96,7 @@ const PerfilCannabicoQtn1Input = ({
   );
 };
 
-PerfilCannabicoQtn1Input.propTypes = {
+CannabisPreferencesInput.propTypes = {
   label: PropTypes.string,
   value: PropTypes.array.isRequired,
   setValue: PropTypes.func.isRequired,
@@ -104,4 +104,12 @@ PerfilCannabicoQtn1Input.propTypes = {
   setError: PropTypes.func,
 };
 
-export default PerfilCannabicoQtn1Input;
+export default CannabisPreferencesInput;
+
+
+
+
+
+
+
+

@@ -28,8 +28,8 @@ import SettingsForm from '../SettingsForm/SettingsForm';
 import SettingsFormGroup from '../SettingsForm/SettingsFormGroup/SettingsFormGroup';
 import ChangeAvatarButton from '../ChangeAvatarButton/ChangeAvatarButton';
 
-import Qtn1Input from '../KiefInputs/PerfilCannabicoQtn1Input';
-import Qtn2Input from '../KiefInputs/PerfilCannabicoQst2Input';
+import CannabisUseInput from '../KiefInputs/CannabisUseInput';
+import CannabisPreferencesInput from '../KiefInputs/CannabisPreferencesInput';
 
 import Divider from '@material-ui/core/Divider';
 
@@ -72,6 +72,7 @@ const EditProfileForm = ({
       bio: currentUser.bio || '',
       website: currentUser.website || '',
       city: currentUser.city || '',
+      canabbisPreference: currentUser.canabbisPreference || '',
     },
     validate,
     onSubmit: async (values) => {
@@ -124,23 +125,10 @@ const EditProfileForm = ({
         <label className="heading-3 font-bold">Bio</label>
         <FormTextarea name="bio" fieldProps={formik.getFieldProps('bio')} />
       </SettingsFormGroup>
+           
       <SettingsFormGroup>
-        <label></label>
-        <div>
-          <h3 className="heading-3 color-grey font-bold">
-            Perfil Cannábico
-          </h3>
-          <p
-            style={{ fontSize: '1.3rem', lineHeight: '1.6rem' }}
-            className="color-grey"
-          >
-            Completa tu información y conecta con personas reales según tu compatibilidad.
-          </p>
-        </div>
-      </SettingsFormGroup>      
-      <SettingsFormGroup>
-      <label className="heading-3 font-bold">Interés Cannábico</label>
-        <Qtn1Input
+      <label className="heading-3 font-bold">Perfil Cannábico</label>
+        <CannabisPreferencesInput
           	label="Selecciona la opción que más te identifica.."
             value={value}
             setValue={setValue}            
@@ -153,29 +141,11 @@ const EditProfileForm = ({
      
       <SettingsFormGroup>
       <label className="heading-3 font-bold">Consumo</label>
-        <Qtn2Input />        
+        <CannabisUseInput />        
         <label></label>
         <Divider />
       </SettingsFormGroup>
-
-       {value.length > 0 ? 
-        <SettingsFormGroup>
-        <label className="heading-3 font-bold">Interés Cannábico</label>
-          <Qtn1Input
-              label="Selecciona la opción que más te identifica.."
-              value={value}
-              setValue={setValue}            
-              error={error}
-              setError={setError}
-          />        
-          <label></label>
-          <Divider />
-        </SettingsFormGroup>
-      : null}
-      
-
-      
-            
+                  
       <SettingsFormGroup>
         <label></label>
         <Button
