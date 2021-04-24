@@ -55,4 +55,8 @@ body {
 .post-type{
   font-size: 1.0rem;
   color: $color-black;
+
+  & > span {
+    margin-left: -10px !important ;
+  } 
 }
