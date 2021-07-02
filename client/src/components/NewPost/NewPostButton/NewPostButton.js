@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { showModal, hideModal } from '../../../redux/modal/modalActions';
+import { ReactComponent as IconKiefmx } from '../../../assets/svg/kief-black.svg';
 
 import Icon from '../../Icon/Icon';
 
@@ -36,9 +37,10 @@ const NewPostButton = ({ showModal, hideModal, plusIcon, children, style }) => {
         {children ? (
           children
         ) : (
-          <Icon icon={plusIcon ? 'add-circle-outline' : 'camera-outline'} />
+          <IconKiefmx />                  
         )}
       </label>
+
       <input
         id="file-upload"
         type="file"

@@ -9,13 +9,13 @@ import {
   FormHelperText,
 } from "@material-ui/core";
 
-const options = [{label: "Auto exploración", value: 1},
-                  {label: "Cuidado Personal", value: 2}, 
-                  {label: "Comercial", value: 3}, 
-                  {label: "Espiritual", value: 4}, 
-                  {label: "Industrial", value: 5}, 
-                  {label: "Investigación", value: 6}, 
-                  {label: "Medicinal", value: 7}]
+const options = [{label: "Auto exploración", value: 1, class: "cannabic-comercial"},
+                  {label: "Cuidado Personal", value: 2, class: "cannabic-comercial"}, 
+                  {label: "Comercial", value: 3, class: "cannabic-comercial"}, 
+                  {label: "Espiritual", value: 4, class: "cannabic-comercial"}, 
+                  {label: "Industrial", value: 5, class: "cannabic-comercial"}, 
+                  {label: "Investigación", value: 6, class: "cannabic-comercial"}, 
+                  {label: "Medicinal", value: 7, class:"cannabic-comercial"}]
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +33,12 @@ const useStyles = makeStyles((theme) => ({
   formHelperText: {
     textAlign: "center",
   },
+  autoExploracion: {
+    backgroundColor: "#fcba03",
+    color: "#FFFFFF"
+  }
+
+
 }));
 
 // 1.0.5

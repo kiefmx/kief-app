@@ -30,13 +30,13 @@ const SmallFooter = () => {
         className="heading-5 color-grey-2 footer--small__copyright mt-lg font-bold"
         style={{ textTransform: 'uppercase ' }}
       >
-        Made with{' '}
+        Hecho con  {' '}
         <Icon
           icon="heart"
           className="color-grey-2 icon--small"
           style={{ margin: '0 5px' }}
         />{' '}
-        by Sander Moen
+        para la comunidad.
       </h5>
     </footer>
   );
