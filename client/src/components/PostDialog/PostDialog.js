@@ -181,7 +181,7 @@ const PostDialog = ({
 
                 {state.data.postType && (
                   <Link style={{ textDecoration: 'none' }}
-                  to={`/explore/tags/${postTypes[state.data.postType - 1].label.toLowerCase()}`}
+                  to={`/explore/tags/${postTypes[state.data.postType - 1].code.toLowerCase()}`}
                 >
                   <span className="post-type">
                     <TypePost value={state.data.postType}></TypePost>                    

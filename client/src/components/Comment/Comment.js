@@ -257,7 +257,7 @@ const Comment = ({
                   onClick: () => handleVote(),
                 }}
                 toggledProps={[
-                  { icon: 'heart', className: 'icon--tiny color-red' },
+                  { icon: 'heart', className: 'icon--tiny color-kiefmx' },
                   { icon: 'heart-outline', className: 'icon--tiny' },
                 ]}
                 elementRef={commentRef}

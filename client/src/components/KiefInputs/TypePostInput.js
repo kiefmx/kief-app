@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import InfoIcon from '@material-ui/icons/Info';
-import CalendarIcon from '@material-ui/icons/CalendarToday';
-import FlowersoIcon from '@material-ui/icons/LocalFlorist';
-import ConsumeIcon from '@material-ui/icons/Whatshot';
-import MedicalIcon from '@material-ui/icons/LocalHospital';
-import SelfCultiveIcon from '@material-ui/icons/Spa';
+import LudicoIcon from '@material-ui/icons/MoodOutlined';
+import ActualidadIcon from '@material-ui/icons/HistoryOutlined';
+import AutocultivoIcon from '@material-ui/icons/EcoOutlined';
+import MedicalIcon from '@material-ui/icons/LocalHospitalOutlined';
+import EmprendimientoIcon from '@material-ui/icons/WorkOutline';
+import LifeStyleIcon from '@material-ui/icons/PeopleAltOutlined';
 
 import {
   makeStyles,
@@ -45,12 +45,12 @@ const TypePostInput = ({
 
   return (
     <>
-    {value == "1" && (<InfoIcon />)}
-    {value == "2" && (<CalendarIcon />)}
-    {value == "3" && (<FlowersoIcon />)}
-    {value == "4" && (<ConsumeIcon />)}
-    {value == "5" && (<MedicalIcon />)}
-    {value == "6" && (<SelfCultiveIcon />)}    
+    {value == "1" && ( <><LudicoIcon /> <span>Lúdico / Recreativo</span></> )}
+    {value == "2" && ( <><ActualidadIcon /> <span>Actualidad Cannábica</span></> )}
+    {value == "3" && ( <><AutocultivoIcon /> <span>Autocultivo</span></> )}
+    {value == "4" && ( <><MedicalIcon /> <span>Medicinal / Investigación</span></> )}
+    {value == "5" && ( <><EmprendimientoIcon /> <span>Emprendimiento</span></> )}
+    {value == "6" && ( <><LifeStyleIcon /> <span>Estilo de Vida</span></> )}    
     </>
   );
 };

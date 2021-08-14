@@ -60,7 +60,7 @@ const HomePage = ({
         <h3 >          
         </h3>
         
-        <NewPostButton />
+        <div />
 
         
       </MobileHeader>

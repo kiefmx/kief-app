@@ -15,7 +15,7 @@ const MobileNav = ({ currentUser }) => {
       <ul className="mobile-nav__list">
         <li>
           <Link to="/">
-            <Icon icon={pathname === '/' ? 'home' : 'home-outline'} />
+            <Icon icon={pathname === '/' ? 'earth' : 'earth-outline'} />
           </Link>
         </li>
         <li>
@@ -41,8 +41,8 @@ const MobileNav = ({ currentUser }) => {
             <Icon
               icon={
                 pathname === `/${currentUser.username}`
-                  ? 'person-circle'
-                  : 'person-circle-outline'
+                  ? 'person'
+                  : 'person-outline'
               }
             />
           </Link>

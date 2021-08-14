@@ -100,7 +100,7 @@ const PostDialogStats = ({
           className="icon--button"
           icon="chatbubble-outline"
         />
-        <Icon className="icon--button" icon="paper-plane-outline" />
+        <div /> 
         <Icon
           className="icon--button"
           onClick={() => bookmarkPost(post._id, token)}
