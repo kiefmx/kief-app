@@ -84,6 +84,7 @@ const HashtagPosts = ({ token, showModal, showAlert }) => {
 
   return !posts.fetching && posts.posts.length === 0 ? (
     <div className="hashtag-posts__empty">
+      <h2 className="heading-2">        
         {t('HashtagPosts.CouldNotFindAnyPostAssociatedWith')}{hashtag}.
       </h2>
     </div>
