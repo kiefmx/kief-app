@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams, useHistory } from 'react-router-dom';
 
 import useScrollPositionThrottled from '../../hooks/useScrollPositionThrottled';
@@ -20,6 +21,7 @@ const HashtagPosts = ({ token, showModal, showAlert }) => {
 
   const { hashtag } = useParams();
   const history = useHistory();
+  const { t, i18n } = useTranslation();
 
   const handleClick = (postId, avatar) => {
     if (window.outerWidth <= 600) {
@@ -82,8 +84,7 @@ const HashtagPosts = ({ token, showModal, showAlert }) => {
 
   return !posts.fetching && posts.posts.length === 0 ? (
     <div className="hashtag-posts__empty">
-      <h2 className="heading-2">
-        Could not find any post associated with #{hashtag}.
+        {t('HashtagPosts.CouldNotFindAnyPostAssociatedWith')}{hashtag}.
       </h2>
     </div>
   ) : (
